@@ -76,7 +76,7 @@
 	          <h4 class="m-0">
 	          	<a href="{{url('admin/product')}}">
 	          		{{$product['total_product']}} 
-	          		<small>Lapangan</small>
+	          		<small>Gaun</small>
 	          	</a>
 	          </h4>
 	          <small class="text-muted">

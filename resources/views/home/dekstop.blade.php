@@ -110,7 +110,7 @@
 
     <div id="dekstop-home-1-position-3" class="animated flipInX">
       <div class="text-center font-size-30">
-        Persewaan Lapangan Futsal
+        Persewaan Baju Pengantin
       </div>
       <div class="mt-3 text-center">
         Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum <br/>

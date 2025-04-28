@@ -1,7 +1,7 @@
 @extends("admin.layout.default")
 
 @section("title")
-Lapangan
+Gaun
 @endsection
 
 @section("content")

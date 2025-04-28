@@ -199,7 +199,7 @@ Invoice
 						<button class="btn btn-success mb-2"
 							data-toggle="modal" data-target="#modal-review">
 							<i class='fe fe-message-circle'></i> 
-							Review Lapangan
+							Review Gaun
 						</button>
 					@endif
 				</div>

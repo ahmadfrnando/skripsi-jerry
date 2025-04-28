@@ -1,7 +1,7 @@
 @extends("user.layout.default")
 
 @section("title")
-Lapangan
+Gaun
 @endsection
 
 @section("sc_header")

@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email',50)->unique();
             $table->text('password');
             $table->string('phone',20)->unique();
-            $table->text('photo')->default("default.png");
+            $table->string('photo')->default("default.png");
             $table->enum('role',['admin','user'])->default("user");
             $table->timestamps();
         });

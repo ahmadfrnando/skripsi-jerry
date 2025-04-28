@@ -19,7 +19,7 @@ class OrderController extends Controller
     		return redirect()->back()->with([
     			"comeback" => [
     				"message" => "failed",
-    				"failed" => "Maaf sepertinya lapangan telah tersewa"
+    				"failed" => "Maaf sepertinya gaun telah tersewa"
     			]
     		]);
     	}

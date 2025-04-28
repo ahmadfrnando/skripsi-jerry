@@ -154,7 +154,7 @@
                   <li class="nav-item">
                     <a href="{{route('user.product')}} " class="nav-link">
                       <i class='fe fe-list'></i> 
-                      Lapangan
+                      Gaun
                     </a>
                   </li>                                  
 
