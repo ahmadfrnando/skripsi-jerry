@@ -27,6 +27,10 @@ class User extends Authenticatable
     public function invoices(){    
         return $this->hasMany(Invoice::class);        
     }
+
+    public function gaun(){    
+        return $this->hasMany(PemesananGaun::class, 'id_user');        
+    }
     
     public function reviewes(){        
         return $this->hasMany(Review::class);

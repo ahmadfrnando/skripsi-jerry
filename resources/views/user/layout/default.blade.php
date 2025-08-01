@@ -152,13 +152,20 @@
                   </li>
 
                   <li class="nav-item">
-                    <a href="{{route('user.product')}} " class="nav-link">
+                    <a href="{{route('user.gaun')}} " class="nav-link">
                       <i class='fe fe-list'></i> 
                       Gaun
                     </a>
-                  </li>                                  
+                  </li>      
 
-                  <li class="nav-item dropdown">
+                  <!-- <li class="nav-item">
+                    <a href="{{route('user.product')}} " class="nav-link">
+                      <i class='fe fe-list'></i> 
+                      Product
+                    </a>
+                  </li>                                   -->
+
+                  <!-- <li class="nav-item dropdown">
                     <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
                       <i class='fe fe-clipboard'></i> 
                       Invoice
@@ -178,7 +185,7 @@
                       <i class='fe fe-dollar-sign'></i> 
                       Pembayaran Manual
                     </a>
-                  </li> 
+                  </li>  -->
 
                   <li class="nav-item">
                     <a href="{{route('user.notification')}}" class="nav-link">

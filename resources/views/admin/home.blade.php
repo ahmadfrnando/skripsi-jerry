@@ -22,7 +22,7 @@
 	</div>
 
 	<div class="row row-cards">
-	  <div class="col-sm-6 col-lg-3">
+	  <!-- <div class="col-sm-6 col-lg-3">
 	    <div class="card p-3">
 	      <div class="d-flex align-items-center">
 	        <span class="stamp stamp-md bg-blue mr-3">
@@ -159,7 +159,7 @@
 	        </div>
 	      </div>
 	    </div>
-	  </div>
+	  </div> -->
 
 	  <div class="col-lg-8">
 	    <div class="card">

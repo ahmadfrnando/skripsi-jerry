@@ -4,29 +4,21 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Config as ConfigModel;
+use App\Models\PemesananGaun;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    public function index(){
-        $invoice = auth()->user()->invoices()
-            ->with(["product","manual_payment"])
-            ->whereIn('status',['pending','running','waiting','payment'])
-            ->first();    	
+    public function index()
+    {   
+        $id_user = Auth::user()->id;
+        $pesanan = PemesananGaun::where('id_user', $id_user)
+            ->whereIn('status', ['diproses', 'berjalan'])
+            ->where('tanggal_sewa_selesai', '>=', now()->toDateString())
+            ->paginate(10);
 
-        if($invoice){
-            $expiredPayment = now()->parse($invoice->created_at)
-                ->addDays(intval(ConfigModel::where('name','payment_day')->first()->value))
-                ->toDateTimeString();
-                
-            $endRent = now()->parse($invoice->start_rent)
-                ->addHours($invoice->hour)
-                ->toDateTimeString();
-        }    
-
-    	return view("user.home",[
-            "invoice" => $invoice,
-            "expiredPayment" => $expiredPayment ?? Null,
-            "endRent" => $endRent ?? Null
+        return view("user.home", [
+            "pesanan" => $pesanan,
         ]);
     }
 }

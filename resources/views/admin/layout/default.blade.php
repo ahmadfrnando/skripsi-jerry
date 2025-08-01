@@ -103,35 +103,48 @@
                     </a>
                   </li>
 
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="{{route('admin.product')}} " class="nav-link">
+                      <i class='fe fe-list'></i> 
+                      Productakan
+                    </a>
+                  </li>         -->
+
+                  <li class="nav-item">
+                    <a href="{{route('admin.gaun')}} " class="nav-link">
                       <i class='fe fe-list'></i> 
                       Gaun
                     </a>
                   </li>                                  
-
                   <li class="nav-item">
+                    <a href="{{route('admin.pemesanan')}} " class="nav-link">
+                      <i class='fe fe-list'></i> 
+                      Pemesanan
+                    </a>
+                  </li>                                  
+
+                  <!-- <li class="nav-item">
                     <a href="{{route('admin.review')}}" class="nav-link">
                       <i class='fe fe-message-circle'></i> 
                       Review
                     </a>
-                  </li>
+                  </li> -->
 
-                  <li class='nav-item'>
+                  <!-- <li class='nav-item'>
                     <a href="{{route('admin.invoice')}}" class='nav-link'>
                       <i class='fe fe-clipboard'></i> 
                       Invoice
                     </a>
-                  </li>                
+                  </li>                 -->
 
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="{{route('admin.manual-payment')}}" class="nav-link">
                       <i class='fe fe-dollar-sign'></i> 
                       Pembayaran Manual
                     </a>
-                  </li>
+                  </li> -->
 
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="{{route('admin.report')}}" class='nav-link'>
                       <i class='fe fe-file'></i> 
                       Laporan
@@ -143,7 +156,7 @@
                       <i class='fe fe-settings'></i> 
                       Setting
                     </a>
-                  </li> 
+                  </li>  -->
                 </ul>
               </div>
             </div>

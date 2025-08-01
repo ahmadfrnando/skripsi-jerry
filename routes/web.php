@@ -34,6 +34,10 @@ Route::group(["middleware" => "isMaintaince"],function(){
 		Route::get("/product","ProductController@index")->name("product");
 		Route::get("/product/{id}","ProductController@detail")->name("product.detail");	
 
+		Route::get("/gaun","GaunController@index")->name("gaun");
+		Route::get("/gaun/{id}","GaunController@detail")->name("gaun.detail");	
+		Route::post("/gaun/order/{id}","Action\OrderController@order")->name("gaun.order");	
+
 		Route::post("/order","Action\OrderController@order")->name("order");
 		Route::get("/order/{id}","OrderController@detail")->name("order.detail");
 
@@ -52,6 +56,9 @@ Route::group(["middleware" => "isMaintaince"],function(){
 	Route::group(["middleware" => "isAdmin","namespace" => "Admin","prefix" => "admin","as" => "admin."],function(){
 		Route::get("/","HomeController@index")->name("home");
 
+		Route::get("/pemesanan","PemesananController@index")->name("pemesanan");
+		Route::post("/pemesanan/update/{pemesanan}","Action\PemesananController@edit")->name("pemesanan.update");
+
 		Route::get("/user","UserController@index")->name("user");
 		Route::post("/user/edit/{user}","Action\UserController@edit")->name("action.user.edit");
 
@@ -64,6 +71,10 @@ Route::group(["middleware" => "isMaintaince"],function(){
 		Route::get("/product","ProductController@index")->name("product");
 		Route::post("/product/add","Action\ProductController@create")->name("action.product.add");
 		Route::post("/product/edit/{product}","Action\ProductController@edit")->name("action.product.edit");
+		
+		Route::get("/gaun","GaunController@index")->name("gaun");
+		Route::post("/gaun/add","Action\GaunController@create")->name("action.gaun.add");
+		Route::post("/gaun/edit/{gaun}","Action\GaunController@edit")->name("action.gaun.edit");
 
 		Route::get("/invoice","InvoiceController@index")->name("invoice");
 		Route::get("/invoice/detail/{id}","InvoiceController@detail")->name("invoice.detail");

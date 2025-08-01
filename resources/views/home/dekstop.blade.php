@@ -37,16 +37,16 @@
 
   #dekstop-home-2{
     margin-bottom: 10px;
-    background:url('{{ asset('assets/images/home-background-2.png')}}') no-repeat;     
+    /* background:url('{{ asset('assets/images/home-background-2.png')}}') no-repeat;      */
     margin:auto;
-    height:800px;
+    height:500px;
     max-width:1349px;
     padding:50px;
   }
 
   #dekstop-home-3{
     margin-bottom: 10px;
-    background:url('{{ asset('assets/images/home-background-3.png')}}') no-repeat;     
+    /* background:url('{{ asset('assets/images/home-background-3.png')}}') no-repeat;      */
     margin:auto;
     height:800px;
     max-width:1349px;
@@ -55,7 +55,7 @@
 
   #dekstop-home-4{
     margin-bottom: 10px;
-    background:url('{{ asset('assets/images/home-background-4.png')}}') no-repeat;     
+    /* background:url('{{ asset('assets/images/home-background-4.png')}}') no-repeat;      */
     margin:auto;
     height:800px;
     max-width:1349px;
@@ -113,49 +113,33 @@
         Persewaan Baju Pengantin
       </div>
       <div class="mt-3 text-center">
-        Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum <br/>
-        Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum <br/>
-        Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum <br/>
-        Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Lorem
+        Selamat datang di situs kami, penyedia layanan persewaan baju pengantin terbaik. <br/>
+        Kami menawarkan berbagai pilihan gaun yang elegan dan menawan untuk hari istimewa Anda. <br/>
+        Dengan koleksi terbaru dan berkualitas tinggi, kami memastikan Anda tampil sempurna. <br/>
+        Jelajahi koleksi kami dan temukan gaun impian Anda di sini.
       </div>
     </div>
   </div>
 
   <div id="dekstop-home-2">
     <div class="ml-3 font-size-30">
-      Lokasi-Lokasi Kami
+      Baju Pengantin
     </div>
 
     <div class="mt-3 ml-3">
-      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum <br/>
-      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum <br/>
-      Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum Loremipsum <br/>        
+      Kami memiliki berbagai pilihan baju pengantin yang elegan dan menawan. <br/>
+      Dengan koleksi terbaru dan berkualitas tinggi, kami memastikan Anda tampil sempurna. <br/>
+      Jelajahi koleksi kami dan temukan baju pengantin impian Anda di sini. <br/>        
     </div>
 
     <div class="d-flex flex-row flex-wrap mt-3"> 
-      @foreach([1,2,3,4,5] as $item)                  
+      @foreach($foto as $item)                  
         <div class="col-3 mb-5 cursor-pointer"
           onclick="window.location=''">
-          <img src="{{asset('assets/images/locations/'.($item+1).'.png')}}"
+          <img src="{{asset('assets/images/gaun/'.($item->foto_gaun))}}"
             class="img-fluid">
         </div>      
       @endforeach    
-    </div>       
-  </div>
-
-  <div id="dekstop-home-3">
-    <div class="ml-3 font-size-30">
-      Galeri
-    </div>        
-
-    <div class="d-flex flex-row flex-wrap mt-3">                  
-      @foreach([1,2,3,4,5] as $item)
-        <div class="col-3 mb-5 cursor-pointer"
-          onclick="window.location=''">
-          <img src="{{asset('assets/images/galeries/'.($item+1).'.png')}}"
-            class="img-fluid">
-        </div>              
-      @endforeach
     </div>       
   </div>
 
