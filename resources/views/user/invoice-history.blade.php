@@ -37,7 +37,7 @@ Riwayat Invoice
 		<div class="card-body">
 			<div class="row">
 				<div class='col-3'>
-					<img src="{{asset('assets/images/products/'.$item->product->get_images[0])}}"
+					<img src="{{asset('assets/images/gaun/'.$item->product->get_images)}}"
 						class="img-fluid">
 				</div>
 
@@ -48,7 +48,7 @@ Riwayat Invoice
 								<div class="float-left">
 									<a href="{{url('user/product/'.$item->product->id)}}">
 										<h4>
-											{{ucwords($item->product->address)}}
+											{{ucwords($item->product->nama_gaun)}}
 										</h4>
 									</a>
 								</div>
@@ -93,13 +93,13 @@ Riwayat Invoice
 
 						<div class="col-12">
 							<h5 class='text-success'>
-								Rp.{{number_format($item->product->price,2)}} Perjam
+								Rp.{{number_format($item->product->harga,2)}} Perhari
 							</h5>
 						</div>
 					
 						<div class="col-12 mt-2">
 							<b>
-								Total : Rp.{{number_format($item->total,2)}} - ({{$item->hour}} Jam)
+								Total : Rp.{{number_format($item->total,2)}} - ({{$item->hour}} Hari)
 							</b>
 						</div>
 

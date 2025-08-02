@@ -27,8 +27,7 @@
   			<th>Product</th>
   			<th>Username</th>
   			<th>Status</th>
-  			<th>Awal Rental</th>  	
-        <th>Jam</th>
+  			<th>Awal Sewa</th>
         <th>Total</th>
   			<th>Dibuat</th>
   			<th>Opsi</th>
@@ -38,8 +37,8 @@
   		<tr>
   			<td>{{$item->id}}</td>  			
         <td>
-          <a href="{{url('admin/product?search='.$item->product->address)}}" target="_blank">
-            {{$item->product->address}}
+          <a href="{{url('admin/gaun?search='.$item->product->nama_gaun)}}" target="_blank">
+            {{$item->product->nama_gaun}}
           </a>
         </td>
         <td>
@@ -85,9 +84,6 @@
         <td>
           {{$item->start_rent}}
         </td>
-        <td>
-          {{$item->hour}} Jam
-        </td> 
         <td>
           Rp.{{number_format($item->total,2)}}
         </td>

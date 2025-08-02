@@ -113,8 +113,8 @@
 		<table>
 			<tr>
 				<td class="td-content">Id</td>
-				<td class="td-content">Username</td>
-				<td class="td-content">Alamat</td>
+				<td class="td-content">Pemesan</td>
+				<td class="td-content">Nama gaun</td>
 				<td class="td-content">Status</td>
 				<td class="td-content">Total</td>
 				<td class="td-content">Dibuat</td>
@@ -124,7 +124,7 @@
 			<tr>
 				<td class="td-content-fill">{{$item->id}}</td>
 				<td class="td-content-fill">{{$item->user->username}}</td>
-				<td class="td-content-fill">{{$item->product->address}}</td>
+				<td class="td-content-fill">{{$item->product->nama_gaun}}</td>
 				<td class="td-content-fill">
 					@if($item->status == "pending")
 						<span class="text-yellow">

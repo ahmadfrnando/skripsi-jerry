@@ -24,4 +24,9 @@ class PemesananGaun extends Model
         $endDate = Carbon::parse($tanggal_selesai);
         return $startDate->diffInDays($endDate);
     }
+
+    public function customer()
+    {
+        return $this->belongsTo(User::class, 'id_user');
+    }
 }

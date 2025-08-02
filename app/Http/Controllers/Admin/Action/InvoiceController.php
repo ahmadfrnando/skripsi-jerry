@@ -31,7 +31,7 @@ class InvoiceController extends Controller
             Notification::create([
                 "user_id" => $invoice->user_id,
                 "title" => "Status invoice telah berubah",
-                "content" => "Status Invoice #".$invoice->id." telah berubah menjadi DITOLAK"
+                "content" => "Status Invoice untuk gaun ".$invoice->product->nama_gaun." telah berubah menjadi ". $invoice->status.""
             ]);
 
             \DB::commit();

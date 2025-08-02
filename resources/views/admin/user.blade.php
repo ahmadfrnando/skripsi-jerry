@@ -37,9 +37,9 @@ User
   		<tr>
   			<td>{{$item->id}}</td>
   			<td class="p-0 text-center">
-  				<a href="{{asset('assets/images/users/'.$item->photo)}}" target="_blank">
-  					<img src="{{asset('assets/images/users/'.$item->photo)}}"
-  					width="100px"/>  			
+  				<a href="{{asset('assets/images/profile_blank_old.png')}}" target="_blank">
+  					<img src="{{asset('assets/images/profile_blank_old.png')}}"
+  					width="70px"/>  			
   				</a>
   			</td>
   			<td>{{$item->username}}</td>

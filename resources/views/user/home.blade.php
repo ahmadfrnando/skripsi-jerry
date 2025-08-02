@@ -32,13 +32,13 @@ Home
 
 @section("content")
 <div class="container">
-	@if($pesanan)
-	@foreach($pesanan as $pesanan)
+	@if($pesanan->count() > 0)
+	@foreach($pesanan as $item)
 	<div class="card">
 		<div class="card-body">
 			<div class="row">
 				<div class='col-md-3 mb-3'>
-					<img src="{{asset('assets/images/gaun/'.$pesanan->gaun->get_images)}}"
+					<img src="{{asset('assets/images/gaun/'.$item->gaun->get_images)}}"
 						class="img-fluid">
 				</div>
 				<div class="col-md-9 mb-3">
@@ -47,20 +47,20 @@ Home
 							<div class="clearfix">
 								<div class="float-left">
 									<h4>
-										{{$pesanan->gaun->nama_gaun ?? ''}}
+										{{$item->gaun->nama_gaun ?? ''}}
 									</h4>
 								</div>
 
 								<div class="float-right">
-									@if($pesanan->status == "proses")
+									@if($item->status == "proses")
 									<span class="badge badge-warning">
 										Pending
 									</span>
-									@elseif($pesanan->status == "berjalan")
+									@elseif($item->status == "berjalan")
 									<span class="badge badge-warning">
 										Berjalan
 									</span>
-									@elseif($pesanan->status == "selesai")
+									@elseif($item->status == "selesai")
 									<span class="badge badge-success">
 										Selesai
 									</span>
@@ -71,13 +71,13 @@ Home
 
 						<div class="col-12">
 							<h5 class='text-success'>
-								Rp.{{number_format($pesanan->gaun->harga,2)}} Perhari
+								Rp.{{number_format($item->gaun->harga,2)}} Perhari
 							</h5>
 						</div>
 
 						<div class="col-12 mt-2">
 							<b>
-								Total : Rp.{{number_format($pesanan->total_harga,2)}} - ({{ \Carbon\Carbon::parse($pesanan->tanggal_sewa_mulai)->diffInDays(\Carbon\Carbon::parse($pesanan->tanggal_sewa_selesai)) }} hari)
+								Total : Rp.{{number_format($item->total_harga,2)}} - ({{ \Carbon\Carbon::parse($item->tanggal_sewa_mulai)->diffInDays(\Carbon\Carbon::parse($item->tanggal_sewa_selesai)) }} hari)
 							</b>
 						</div>
 
@@ -85,15 +85,15 @@ Home
 							<div class="clearfix">
 								<div class="float-left text-left">
 									<b>
-										Tanggal Mulai : {{$pesanan->tanggal_sewa_mulai}}
+										Tanggal Mulai : {{$item->tanggal_sewa_mulai}}
 									</b>
 									<b>
-										Tanggal Selesai : {{$pesanan->tanggal_sewa_selesai}}
+										Tanggal Selesai : {{$item->tanggal_sewa_selesai}}
 									</b>
 								</div>
 								<div class="float-right">
 									<b>
-										Dibuat Pada : {{ \Carbon\Carbon::parse($pesanan->created_at)->format('d-m-Y H:i') }}
+										Dibuat Pada : {{ \Carbon\Carbon::parse($item->created_at)->format('d-m-Y H:i') }}
 									</b>
 								</div>
 							</div>
@@ -108,19 +108,7 @@ Home
 	<div class="card">
 		<div class="card-body">
 			<div class="col-md-8 m-auto text-center">
-				<img src="{{asset('assets/images/invoice-404.png')}}"
-					class="img-fluid">
-				<h5>Data pemesanan tidak ditemukan</h5>
-			</div>
-		</div>
-	</div>
-	@endif
-
-	@if(!($pesanan))
-	<div class="card">
-		<div class="card-body">
-			<div class="col-md-8 m-auto text-center">
-				<img src="{{asset('assets/images/invoice-404.png')}}"
+				<img src="{{asset('assets/images/404.png')}}"
 					class="img-fluid">
 				<h5>Data pemesanan tidak ditemukan</h5>
 			</div>

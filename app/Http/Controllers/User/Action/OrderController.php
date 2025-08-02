@@ -80,7 +80,7 @@ class OrderController extends Controller
             $startDate = Carbon::parse($payload["tanggal_sewa_mulai"]);
             $endDate = Carbon::parse($payload["tanggal_sewa_selesai"]);
             $hari = $startDate->diffInDays($endDate);
-            $payload["total_harga"] = $gaun->harga * $hari;
+            $payload["total_harga"] = $hari > 0 ? $gaun->harga * $hari : $gaun->harga;
 
             PemesananGaun::create($payload);
             $notif = new Notification();
@@ -89,6 +89,15 @@ class OrderController extends Controller
             $notif->content = 'Anda telah melakukan penyewaan gaun ' . $gaun->nama_gaun . ' pada tanggal ' . $payload["tanggal_sewa_mulai"] . ' sampai ' . $payload["tanggal_sewa_selesai"];
             $notif->save();
 
+            Invoice::create([
+                'user_id' => auth()->user()->id,
+                'product_id' => $gaun->id,
+                'status' => 'pending',
+                'start_rent' => $payload["tanggal_sewa_mulai"],
+                'total' => $payload["total_harga"],
+                'hour' => $hari
+            ]);
+            // 'pending','payment','rejected','waiting','running','compeleted','failed','canceled'
             DB::commit();
             return FormatResponse::successBack("Berhasil membuat pesanan");
         } catch (\Exception $e) {

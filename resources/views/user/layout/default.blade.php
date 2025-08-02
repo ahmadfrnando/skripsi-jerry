@@ -145,14 +145,14 @@
               <div class="col-lg order-lg-first">
                 <ul class="nav nav-tabs border-0 flex-column flex-lg-row">                                  
                   <li class="nav-item">
-                    <a href="{{route('user.home')}}" class="nav-link">
+                    <a href="{{route('user.home')}}" class="nav-link {{ Route::currentRouteName() == 'user.home' ? 'active' : '' }}">
                       <i class='fe fe-inbox'></i> 
                       Home
                     </a>
                   </li>
 
                   <li class="nav-item">
-                    <a href="{{route('user.gaun')}} " class="nav-link">
+                    <a href="{{route('user.gaun')}} " class="nav-link {{ Route::currentRouteName() == 'user.gaun' ? 'active' : '' }}">
                       <i class='fe fe-list'></i> 
                       Gaun
                     </a>
@@ -165,8 +165,8 @@
                     </a>
                   </li>                                   -->
 
-                  <!-- <li class="nav-item dropdown">
-                    <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">
+                  <li class="nav-item dropdown">
+                    <a href="javascript:void(0)" class="nav-link {{ Route::currentRouteName() == 'user.invoice' || Route::currentRouteName() == 'user.invoice.history' ? 'active' : '' }}" data-toggle="dropdown">
                       <i class='fe fe-clipboard'></i> 
                       Invoice
                     </a>
@@ -180,15 +180,15 @@
                     </div>
                   </li>    
 
-                  <li class="nav-item">
-                    <a href="{{route('user.manual-payment')}}" class="nav-link">
+                  <!-- <li class="nav-item">
+                    <a href="{{route('user.manual-payment')}}" class="nav-link {{ Route::currentRouteName() == 'user.manual-payment' ? 'active' : '' }}">
                       <i class='fe fe-dollar-sign'></i> 
                       Pembayaran Manual
                     </a>
                   </li>  -->
 
                   <li class="nav-item">
-                    <a href="{{route('user.notification')}}" class="nav-link">
+                    <a href="{{route('user.notification')}}" class="nav-link {{ Route::currentRouteName() == 'user.notification' ? 'active' : '' }}">
                       <i class='fe fe-bell'></i> 
                       Notifikasi
                     </a>

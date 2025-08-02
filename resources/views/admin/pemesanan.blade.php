@@ -26,6 +26,7 @@ Gaun
   		<tr>
   			<th>Id</th>
         <th class="text-center">Gambar</th>
+  			<th>Nama Pemesan</th>
   			<th>Nama Gaun</th>
   			<th>Biaya</th>
         <th>Status</th>
@@ -39,7 +40,8 @@ Gaun
             <img src="{{asset('assets/images/gaun/'.$item->gaun->get_images)}}" width="100px" />
           </a>
         </td>
-  			<td>{{$item->gaun->nama_gaun}}</td>
+  			<td class="text-uppercase">{{$item->customer->username ?? "-"}}</td>
+  			<td>{{$item->gaun->nama_gaun ?? "-"}}</td>
   			<td>Rp.{{number_format($item->total_harga,2)}}</td>  			
         <td>
           @if($item->status == "diproses")
@@ -47,7 +49,7 @@ Gaun
               Diproses
             </span>
           @elseif($item->status == "berjalan")
-            <span class="badge badge-success">
+            <span class="badge badge-warning text-dark">
               Berjalan
             </span>
           @else

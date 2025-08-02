@@ -31,7 +31,7 @@ Invoice
 			<div class="card-body">
 				<div class="row">
 					<div class='col-md-3 mb-3'>
-						<img src="{{asset('assets/images/products/'.$invoice->product->get_images[0])}}" 
+						<img src="{{asset('assets/images/gaun/'.$invoice->product->get_images)}}" 
 							class="img-fluid">
 					</div>
 					<div class="col-md-9 mb-3">
@@ -40,7 +40,7 @@ Invoice
 								<div class="clearfix">
 									<div class="float-left">
 										<h4>
-											{{ucwords($invoice->product->address)}}
+											{{ucwords($invoice->product->nama_gaun)}}
 										</h4>
 									</div>
 
@@ -68,13 +68,13 @@ Invoice
 
 							<div class="col-12">
 								<h5 class='text-success'>
-									Rp.{{number_format($invoice->product->price,2)}} Perjam
+									Rp.{{number_format($invoice->product->price,2)}} Perhari
 								</h5>
 							</div>
 						
 							<div class="col-12 mt-2">
 								<b>
-									Total : Rp.{{number_format($invoice->total,2)}} - ({{$invoice->hour}} Jam)
+									Total : Rp.{{number_format($invoice->total,2)}} - ({{$invoice->hour}} Hari)
 								</b>
 							</div>
 
